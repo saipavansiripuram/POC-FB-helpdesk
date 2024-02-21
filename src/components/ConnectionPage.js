@@ -7,6 +7,14 @@ const ConnectionPage = () => {
 
   const [sdkInitialized, setSdkInitialized] = useState(false);
   
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+    console.log('Welcome!  Fetching your information.... ');
+    window.FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
   useEffect(() => {
     // Load the Facebook SDK asynchronously
     window.fbAsyncInit = () => {
@@ -45,7 +53,7 @@ const ConnectionPage = () => {
               } else { 
                   //  <!-- If you are not logged in, the login dialog will open for you to login asking for permission to get your public profile and email -->
                    console.log('User cancelled login or did not fully authorize.'); }
-    });
+    }); 
 };
 
   const handleConnectPage = () => {
@@ -54,6 +62,7 @@ const ConnectionPage = () => {
       window.FB.getLoginStatus(response => {
         if (response.status === 'connected') {
           // User is logged in
+          testAPI();  
           navigate("/chat");
         } else {
           // User is not logged in, initiate login process
