@@ -75,17 +75,12 @@ const ConnectionPage = () => {
               console.log('Login cancelled or encountered an error.');
               navigate("/chat");
             }
-          }, { scope: 'email' }); // Add any additional permissions you need
+          }, { scope: 'email' }); 
         }
       });
     }
   };
 
-  // const handleConnectPage = async () =>{
-  //  console.log("Clicked");
-  //  navigate("/chat");
-
-  // }
   return (
     <div className="bg-[#1e4d90] backdrop-opacity-10  w-full h-screen ">
       <Header/>
