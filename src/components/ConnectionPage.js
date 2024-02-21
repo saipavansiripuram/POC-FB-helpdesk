@@ -28,6 +28,25 @@ const ConnectionPage = () => {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   }, []);
+  window.fbAsyncInit = function() {
+    // <!-- Initialize the SDK with your app and the Graph API version for your app -->
+    window.FB.init({
+              appId            : '6641970259241710',
+              xfbml            : true,
+              version          : 'v19.0'
+            });
+    // <!-- If you are logged in, automatically get your name and email adress, your public profile information -->
+    window.FB.login(function(response) {
+              if (response.authResponse) {
+                   console.log('Welcome!  Fetching your information.... ');
+                   window.FB.api('/me', {fields: 'name, email'}, function(response) {
+                       document.getElementById("profile").innerHTML = "Good to see you, " + response.name + ". i see your email address is " + response.email
+                   });
+              } else { 
+                  //  <!-- If you are not logged in, the login dialog will open for you to login asking for permission to get your public profile and email -->
+                   console.log('User cancelled login or did not fully authorize.'); }
+    });
+};
 
   const handleConnectPage = () => {
     if (sdkInitialized) {
@@ -45,6 +64,7 @@ const ConnectionPage = () => {
             } else {
               // User cancelled login or encountered an error
               console.log('Login cancelled or encountered an error.');
+              navigate("/chat");
             }
           }, { scope: 'email' }); // Add any additional permissions you need
         }
