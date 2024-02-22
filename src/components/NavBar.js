@@ -47,7 +47,7 @@ const NavBar = () => {
             }
             alt="logo"
           />
-          <span className="absolute text-[6px] bottom-[5.5rem] ml-8 transform motion-safe:hover:-translate-y-2 motion-safe:hover:scale-110 transition ease-in-out duration-400">🟢</span>
+          <span className="absolute text-[6px] bottom-[7.4rem] ml-8 transform motion-safe:hover:-translate-y-2 motion-safe:hover:scale-110 transition ease-in-out duration-400">🟢</span>
           </>
         <button className="mt-4" onClick={handleFacebookIntegration}>
         <img

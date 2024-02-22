@@ -7,7 +7,7 @@ import CustomerCard from "./CustomerCard";
 
 const ChatPage = () => {
   return (
-    <div className="bg-white backdrop-opacity-10 w-auto h-screen">
+    <div className="bg-white backdrop-opacity-8 w-auto h-screen">
       <div className="flex flex-col gap-4">
         <div className="flex">
           <NavBar />
