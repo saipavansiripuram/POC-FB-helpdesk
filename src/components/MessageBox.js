@@ -2,7 +2,7 @@ import React from 'react'
 
 const MessageBox = ({ text }) => {
   return (
-    <div className='p-2 bg-cyan-100 border rounded-xl max-w-80 text-sm text-gray-600 font-sans'>
+    <div className='p-2 bg-cyan-100 border rounded-xl max-w-80 text-sm text-black font-sans'>
      {text}
     </div>
   )
