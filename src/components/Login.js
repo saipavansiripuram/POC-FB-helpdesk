@@ -7,7 +7,7 @@ import {
 import { addUser } from "../utils/userSlice";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
-import {checkValidData} from "../utils/Validate"
+import { checkValidData } from "../utils/Validate";
 import Header from "./Header";
 
 const Login = () => {
@@ -19,7 +19,6 @@ const Login = () => {
   const password = useRef(null);
 
   const handleButtonClick = () => {
-
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
 
@@ -38,16 +37,14 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-        
           })
             .then(() => {
-              const { uid, email, displayName} = auth.currentUser;
+              const { uid, email, displayName } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
                   email: email,
                   displayName: displayName,
-                
                 })
               );
             })
@@ -87,13 +84,13 @@ const Login = () => {
 
   return (
     <div className="bg-[#1e4d90] backdrop-opacity-10  w-full h-screen">
-      <Header/>
+      <Header />
       <div>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-full md:w-4/12 absolute p-16 mx-auto my-28 right-0 left-0  bg-white bg-opacity-100 rounded-xl text-white"
+          className="w-full md:w-4/12 absolute p-16 mx-auto my-24 right-0 left-0  bg-white bg-opacity-100 rounded-xl text-white"
         >
-          <h1 className="text-xl text-black text-center font-medium p-4">
+          <h1 className="text-xl text-black text-center font-medium">
             {isSignInForm ? "Sign In " : "Create Account"}
           </h1>
           {!isSignInForm && (
@@ -135,14 +132,14 @@ const Login = () => {
 
           <p className="text-red-500 text-lg ">{errorMessage}</p>
           <button
-            className="p-4 my-4 bg-blue-800 hover:bg-blue-600 text-white  w-full rounded-lg"
+            className="p-4 my-2 bg-blue-800 hover:bg-blue-600 text-white  w-full rounded-lg"
             onClick={handleButtonClick}
           >
             {isSignInForm ? "Login" : "Sign Up"}
           </button>
 
           <p
-            className="py-1 text-black cursor-pointer text-center"
+            className="py-1  text-black cursor-pointer text-center"
             onClick={toggleSignInForm}
           >
             {isSignInForm ? (

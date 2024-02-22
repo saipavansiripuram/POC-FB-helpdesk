@@ -7,7 +7,7 @@ const ConnectionPage = () => {
 
   const [sdkInitialized, setSdkInitialized] = useState(false);
   
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+  function testAPI() {                   
     console.log('Welcome!  Fetching your information.... ');
     window.FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
@@ -62,7 +62,7 @@ const ConnectionPage = () => {
       window.FB.getLoginStatus(response => {
         if (response.status === 'connected') {
           // User is logged in
-          testAPI();  
+          // testAPI();  
           navigate("/chat");
         } else {
           // User is not logged in, initiate login process
@@ -73,19 +73,20 @@ const ConnectionPage = () => {
             } else {
               // User cancelled login or encountered an error
               console.log('Login cancelled or encountered an error.');
-              navigate("/chat");
             }
           }, { scope: 'email' }); 
         }
       });
     }
+    setTimeout(() => {
+      navigate("/chat");
+    }, 2000);
   };
 
   return (
     <div className="bg-[#1e4d90] backdrop-opacity-10  w-full h-screen ">
       <Header/>
-
-      <div className="w-full md:w-4/12 absolute p-16 mx-auto  my-44 right-0 left-0  bg-white bg-opacity-100 rounded-xl text-white">
+      <div className="w-full md:w-4/12 absolute p-16 mx-auto my-44 right-0 left-0  bg-white bg-opacity-100 rounded-xl text-white">
         <h1 className="text-xl text-black text-center font-medium p-4">
           Facebook Page Integration
         </h1>

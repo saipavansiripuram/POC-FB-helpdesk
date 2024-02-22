@@ -14,10 +14,9 @@ const ChatBox = ({ name }) => {
                 src={
                   "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
                 }
-                width={30}
-                height={30}
-                alt="dp"
-                className="rounded-full"
+            
+                alt="profile"
+                className="rounded-full w-12 h-12"
               />
             </span>
             <span>
@@ -25,7 +24,7 @@ const ChatBox = ({ name }) => {
             </span>
           </div>
           <div className="">
-            <span className="text-xs -mb-3 text-slate-600 ml-4">12:22 PM</span>
+            <span className="text-xs -mb-3 text-slate-600 ml-4">Harika - Jan 05, 12:22 PM</span>
           </div>
         </div>
         <div className="p-5 flex flex-1 flex-col items-end">
@@ -41,13 +40,13 @@ const ChatBox = ({ name }) => {
                   src={
                     "https://i.pinimg.com/474x/98/51/1e/98511ee98a1930b8938e42caf0904d2d.jpg"
                   }
-                  alt="dp"
+                  alt="profile"
                   className="w-10 h-10 rounded-full items-end"
                 />
               </span>
             </div>
           </div>
-          <span className="text-xs -mb-8 text-slate-600 mr-8">10:12 AM</span>
+          <span className="text-xs -mb-8 text-slate-600 mr-8">Richpanel - Jan 05, 10:12 AM</span>
         </div>
         <div className="p-5 mb-44">
           <div className="flex flex-row gap-2">
@@ -56,10 +55,8 @@ const ChatBox = ({ name }) => {
                 src={
                   "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
                 }
-                width={30}
-                height={30}
-                alt="dp"
-                className="rounded-full"
+                alt="profile"
+                className="rounded-full w-12 h-12"
               />
             </span>
             <span>
@@ -67,7 +64,7 @@ const ChatBox = ({ name }) => {
             </span>
           </div>
           <div>
-            <span className="text-xs text-slate-600 ml-4">12:22 PM</span>
+            <span className="text-xs text-slate-600 ml-4">Harika - Jan 05, 12:22 PM</span>
           </div>
         </div>
         <div className="p-6 flex justify-around">

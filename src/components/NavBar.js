@@ -1,8 +1,14 @@
 import React from "react";
 import member from "../assets/images/member.png";
 import trade from "../assets/images/trade.png";
+import { useNavigate } from "react-router-dom";
+
 
 const NavBar = () => {
+ const navigate = useNavigate();
+  const handleFacebookIntegration= ()=>{
+    navigate("/flow");
+  }
   return (
     <div className="w-20 h-screen bg-blue-900">
       <div className="flex-col items-center justify-between">
@@ -32,7 +38,8 @@ const NavBar = () => {
             alt="logo"
           />
         </div>
-        <div className="mx-2 w-auto items-center mt-[336px] ml-4 " >
+        <div className="mx-2 w-auto items-center mt-[286px] ml-4" >
+          <>
           <img
             className="w-10 h-10 md:mx-0  border hover:border-green-600   rounded-full  transform motion-safe:hover:-translate-y-2 motion-safe:hover:scale-110 transition ease-in-out duration-400"
             src={
@@ -40,7 +47,17 @@ const NavBar = () => {
             }
             alt="logo"
           />
-          <span className="absolute text-[6px] bottom-10 ml-8 transform motion-safe:hover:-translate-y-2 motion-safe:hover:scale-110 transition ease-in-out duration-400">🟢</span>
+          <span className="absolute text-[6px] bottom-[5.5rem] ml-8 transform motion-safe:hover:-translate-y-2 motion-safe:hover:scale-110 transition ease-in-out duration-400">🟢</span>
+          </>
+        <button className="mt-4" onClick={handleFacebookIntegration}>
+        <img
+            className="w-10 h-10 md:mx-0  border hover:border-green-600   rounded-full  transform motion-safe:hover:-translate-y-2 motion-safe:hover:scale-110 transition ease-in-out duration-400"
+            src={
+              "https://w7.pngwing.com/pngs/49/357/png-transparent-logging-out-log-off-logout-thumbnail.png"
+            }
+            alt="logo"
+          />
+        </button>
         </div>
       </div>
     </div>

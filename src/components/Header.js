@@ -40,21 +40,21 @@ const Header = () => {
       });
   };
   return (
-    <div className="absolute w-screen px-8 py-6 z-12 bg-gradient-to-b from-white flex  flex-col md:flex-row items-center md:justify-between ">
+    <div className="absolute w-screen px-8 py-4 z-10 bg-gradient-to-b flex  flex-col md:flex-row items-center md:justify-between ">
       <img
-        className="w-44 mx-auto md:mx-0"
+        className="w-12 mx-auto md:mx-0 border rounded-lg"
         src={
-          "https://s3.amazonaws.com/resumator/customer_20211012064647_FFUH5YGA9CMVQ6ZA/logos/20220613121757_Richpanel_Color.png"
+          "https://global-uploads.webflow.com/628202eb7980b612a999fc44/62ab4580a7221d718071030f_richpanel-logo.png"
         }
         alt="logo"
       />
       {user && (
         <div className="flex justify-end">
-          <p className="hidden md:block m-2 text-black text-3xl">
+          <p className="hidden md:block m-2 text-white text-xl">
             Hi ,{user.displayName}
           </p>
           <button
-            className="mx-2 mt-4 md:mt-0 md:p-2 bg-white text-black rounded-lg"
+            className="mx-2 mt-4 md:mt-0 md:p-2 bg-white hover:bg-gray-400 rounded-lg"
             onClick={handleSignOut}
           >
             Signout

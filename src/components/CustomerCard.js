@@ -10,15 +10,13 @@ const CustomerCard = ({ email, firstname, lastname }) => {
       </div>
       <div className="flex justify-between">
         <span>Firstname</span>
-        <span  className="font-medium">{firstname}</span>
+        <span className="font-medium">{firstname}</span>
       </div>
       <div className="flex justify-between">
         <span>Lastname</span>
-        <span  className="font-medium">{lastname}</span>
+        <span className="font-medium">{lastname}</span>
       </div>
-      <button className="mr-auto my-2 text-blue-600 ">
-        View more details
-      </button>
+      <button className="mr-auto my-2 text-blue-600 ">View more details</button>
     </div>
   );
 };
